@@ -1,4 +1,4 @@
-pub fn solution() {
+pub fn solution() -> i32 {
     let mut n = 20;
     'main_loop: loop {
         n += 1;
@@ -7,7 +7,6 @@ pub fn solution() {
                 continue 'main_loop;
             }
         }
-        println!("p005: {n}");
-        return;
+        return n;
     }
 }

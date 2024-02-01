@@ -1,6 +1,6 @@
 use crate::common::is_prime;
 
-pub fn solution() {
+pub fn solution() -> usize {
     let mut count = 0;
     let mut i = 0;
     while count < 10_001 {
@@ -9,5 +9,5 @@ pub fn solution() {
             count += 1;
         }
     }
-    println!("p007: {i}");
+    i
 }
