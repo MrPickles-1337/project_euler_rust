@@ -1,3 +1,5 @@
+use num_bigint::BigUint;
+
 pub fn is_prime(n: usize) -> bool {
     if n == 2 || n == 3 {
         return true;
@@ -14,4 +16,8 @@ pub fn is_prime(n: usize) -> bool {
     }
 
     true
+}
+
+pub fn factorial<T: Into<BigUint>>(n: T) -> BigUint {
+    num_iter::range_inclusive(1u32.into(), n.into()).product()
 }

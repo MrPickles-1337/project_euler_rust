@@ -10,3 +10,4 @@ proc_macro = true
 
 [dependencies]
 num-bigint = "0.4.4"
+num-iter = "0.1.44"
