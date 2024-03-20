@@ -4,12 +4,13 @@ use proc_macro::TokenStream;
 
 #[proc_macro]
 pub fn project_euler(_: TokenStream) -> TokenStream {
-    let problems: Vec<String> = read_dir("src")
+    let mut problems: Vec<String> = read_dir("src")
         .expect("Cannot read src dir")
         .map(|i| i.unwrap())
         .filter(|i| i.file_name().to_string_lossy().starts_with('p'))
         .map(|i| i.file_name().into_string().unwrap())
         .collect();
+    problems.sort();
     let mut da_code = String::new();
     da_code.push_str("use std::time::{SystemTime, UNIX_EPOCH};");
 
