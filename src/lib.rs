@@ -40,7 +40,7 @@ pub fn project_euler(_: TokenStream) -> TokenStream {
     }
     da_code.push_str("}\n}");
     da_code.push_str("else {\n");
-    let mut last = problems.last().unwrap().split(".");
+    let mut last = problems.last().unwrap().split('.');
     let m = last.next().unwrap();
     da_code.push_str("let start = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();\n");
     da_code.push_str(format!("let result = {}::solution();\n", m).as_str());
@@ -54,6 +54,6 @@ pub fn project_euler(_: TokenStream) -> TokenStream {
     );
     da_code.push('}');
 
-    da_code.push_str("}");
+    da_code.push('}');
     da_code.parse().unwrap()
 }
