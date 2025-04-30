@@ -17,7 +17,7 @@ fn count_divisors(n: usize) -> usize {
             if n % i == i {
                 count += 1;
             } else {
-                count = count + 2
+                count += 2
             }
         }
     }
