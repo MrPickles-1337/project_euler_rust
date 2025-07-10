@@ -28,14 +28,10 @@ pub fn project_euler(_: TokenStream) -> TokenStream {
 
         let m = spl.next().unwrap();
         da_code.push_str("let start = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();\n");
-        da_code.push_str(format!("let result = {}::solution();\n", m).as_str());
+        da_code.push_str(format!("let result = {m}::solution();\n").as_str());
         da_code.push_str("let end = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();\n");
         da_code.push_str(
-            format!(
-                "println!(\"{}: {{}}, time: {{:?}}\", result, end - start);",
-                m
-            )
-            .as_str(),
+            format!("println!(\"{m}: {{}}, time: {{:?}}\", result, end - start);").as_str(),
         );
     }
     da_code.push_str("}\n}");
@@ -43,15 +39,10 @@ pub fn project_euler(_: TokenStream) -> TokenStream {
     let mut last = problems.last().unwrap().split('.');
     let m = last.next().unwrap();
     da_code.push_str("let start = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();\n");
-    da_code.push_str(format!("let result = {}::solution();\n", m).as_str());
+    da_code.push_str(format!("let result = {m}::solution();\n").as_str());
     da_code.push_str("let end = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();\n");
-    da_code.push_str(
-        format!(
-            "println!(\"{}: {{}}, time: {{:?}}\", result, end - start);",
-            m
-        )
-        .as_str(),
-    );
+    da_code
+        .push_str(format!("println!(\"{m}: {{}}, time: {{:?}}\", result, end - start);").as_str());
     da_code.push('}');
 
     da_code.push('}');
